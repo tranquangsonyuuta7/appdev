@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const database = require('./database/models/index');
+const session = require("express-session");
+const flash = require("connect-flash");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -21,6 +23,19 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 require('dotenv').config()
+
+// creating 24 hours from milliseconds
+const oneDay = 1000 * 60 * 60 * 24; // milisecond
+app.use(
+  session({
+    secret: "keyboard cat",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: oneDay },
+  })
+);
+
+app.use(flash());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

@@ -1,0 +1,200 @@
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                  <!-- Begin Trainees section -->
+                  <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Trainees</h6>
+                    </div>
+                    <div class="card-body">
+                        
+                        <a href="/staff/create_trainee">
+                            <button class="btn btn-success btn-lg"><i class="fas fa-plus"></i> Create trainee</button>
+                        </a>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Username</th>
+                                        <th>Password</th>
+                                        <th>Update</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <% trainees.forEach(function(trainee) { %>
+                                    <tr>
+                                      <th scope="row"><%= trainee.id %></th>
+                                      <td><%= trainee.username %></td>
+                                      <td><%= trainee.password %></td>
+                                      <td><a href="/staff/update_trainee/<%= trainee.id %>" class="btn btn-warning"><i class="fas fa-cog"></i> Update</a></td>
+                                      <td><a href="/staff/delete_trainee/<%= trainee.id %>" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</a></td>
+                                    </tr>
+                                  <% }); %> 
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                  </div>
+                  <!-- End Trainees section -->
+
+                  <!-- Begin Course Category section -->
+                  <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Course Categories</h6>
+                    </div>
+                    <div class="card-body">
+                        
+                        <a href="/staff/create_courseCategory">
+                            <button class="btn btn-success btn-lg"><i class="fas fa-plus"></i> Create Course Categories</button>
+                        </a>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable1" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Update</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <% courseCategories.forEach(function(courseCategory) { %>
+                                    <tr>
+                                      <th scope="row"><%= courseCategory.id %></th>
+                                      <td><%= courseCategory.name %></td>
+                                      <td><%= courseCategory.description %></td>
+                                      <td><a href="/staff/update_courseCategory/<%= courseCategory.id %>" class="btn btn-warning"><i class="fas fa-cog"></i> Update</a></td>
+                                      <td><a href="/staff/delete_courseCategory/<%= courseCategory.id %>" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</a></td>
+                                    </tr>
+                                  <% }); %> 
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                  </div>
+                  <!-- End Course Category section -->
+
+                  <!-- Begin Course section -->
+                  <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Courses</h6>
+                    </div>
+                    <div class="card-body">
+                        
+                        <a href="/staff/create_course">
+                            <button class="btn btn-success btn-lg"><i class="fas fa-plus"></i>Create Course</button>
+                        </a>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Course Category</th>
+                                        <th>Update</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <% courses.forEach(function(course) { %>
+                                    <tr>
+                                      <th scope="row"><%= course.id %></th>
+                                      <td><%= course.name %></td>
+                                      <td><%= course.description %></td>
+                                      <td><%= course.CourseCategory.name %></td>
+                                      <td><a href="/staff/update_course/<%= course.id %>" class="btn btn-warning"><i class="fas fa-cog"></i> Update</a></td>
+                                      <td><a href="/staff/delete_course/<%= course.id %>" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</a></td>
+                                    </tr>
+                                  <% }); %> 
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                  </div>
+                  <!-- End Course section -->
+
+                  <!-- Begin Course Category section -->
+                  <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Topic</h6>
+                    </div>
+                    <div class="card-body">
+                        
+                        <a href="/staff/create_topic">
+                            <button class="btn btn-success btn-lg"><i class="fas fa-plus"></i> Create Topic</button>
+                        </a>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable3" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Update</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <% topics.forEach(function(topic) { %>
+                                    <tr>
+                                      <th scope="row"><%= topic.id %></th>
+                                      <td><%= topic.name %></td>
+                                      <td><%= topic.description %></td>
+                                      <td><a href="/staff/update_topic/<%= topic.id %>" class="btn btn-warning"><i class="fas fa-cog"></i> Update</a></td>
+                                      <td><a href="/staff/delete_topic/<%= topic.id %>" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</a></td>
+                                    </tr>
+                                  <% }); %> 
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                  </div>
+                  <!-- End Course Category section -->
+
+                  <!-- Begin Trainee Course section -->
+                  <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Trainee's task</h6>
+                    </div>
+                    <div class="card-body">
+                        
+                        <a href="/staff/create_traineeCourse">
+                            <button class="btn btn-success btn-lg"><i class="fas fa-plus"></i>Assign Trainee</button>
+                        </a>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable3" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Trainee</th>
+                                        <th>Course</th>
+                                        <th>Update</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <% traineeCourses.forEach(function(traineeCourse) { %>
+                                    <tr>
+                                      <td><%= traineeCourse.Trainee.username %></td>
+                                      <td><%= traineeCourse.Course.name %></td>
+                                      <td><a href="/staff/update_traineeCourse" class="btn btn-warning"><i class="fas fa-cog"></i> Update</a></td>
+                                      <td><a href="/staff/delete_traineeCourse" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</a></td>
+                                    </tr>
+                                  <% }); %> 
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                  </div>
+                  <!-- End Trainee Course section -->
+
+                </div>
+                <!-- /.container-fluid -->

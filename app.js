@@ -9,7 +9,7 @@ const flash = require("connect-flash");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var adminRouter = require('./routes/admin_routes');
+var adminRouter = require('./routes/admin');
 
 var app = express();
 

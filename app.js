@@ -43,8 +43,8 @@ app.use(flash());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin',verifyAdmin, adminRouter);
-// app.use('/admin', adminRouter);
-app.use('/trainingStaff',verifyStaff ,staffRouter);
+app.use('/admin', adminRouter);
+// app.use('/trainingStaff',verifyStaff ,staffRouter);
 // app.use('/trainingStaff',staffRouter);
 app.use('/auth' ,authRouter);
 

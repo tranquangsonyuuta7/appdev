@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const database = require("../database/models/index");
-const Account = database.db.Account;
+const Account = database.db.Accounts;
 const Role = database.db.Role;
 
 /* GET users listing. */

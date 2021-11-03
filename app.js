@@ -11,6 +11,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/admin');
 var staffRouter = require('./routes/trainingStaff');
+var authRouter = require('./routes/auth');
+const { verifyAdmin, verifyStaff } = require('./middlewares/auth');
 
 var app = express();
 
@@ -32,7 +34,7 @@ app.use(
     secret: "keyboard cat",
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: oneDay },
+    // cookie: { maxAge: oneDay },
   })
 );
 
@@ -40,8 +42,11 @@ app.use(flash());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/admin', adminRouter);
-app.use('/trainingStaff', staffRouter);
+app.use('/admin',verifyAdmin, adminRouter);
+// app.use('/admin', adminRouter);
+app.use('/trainingStaff',verifyStaff ,staffRouter);
+// app.use('/trainingStaff',staffRouter);
+app.use('/auth' ,authRouter);
 
 database.testConnection();
 

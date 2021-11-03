@@ -1,0 +1,100 @@
+
+    <div class="container-fluid">
+      <form action="/trainingStaff/addTrainee" method="POST">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            name="username"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            name="password"
+            required
+          />
+        </div>
+
+        <div class="mb-3" style="display: none">
+          <label for="exampleInputPassword1" class="form-label">Role</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputPassword1"
+            name="roleId"
+            value="<%= traineeRole.dataValues.id%>"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Fullname</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputPassword1"
+            name="fullname"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"
+            >Education</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputPassword1"
+            name="education"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"
+            >Date of birth</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputPassword1"
+            name="dateOfBirth"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Age</label>
+          <input
+            type="number"
+            class="form-control"
+            id="exampleInputPassword1"
+            name="age"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputPassword1"
+            name="email"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+      
+    
+

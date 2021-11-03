@@ -10,6 +10,7 @@ const flash = require("connect-flash");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/admin');
+var staffRouter = require('./routes/trainingStaff');
 
 var app = express();
 
@@ -40,6 +41,7 @@ app.use(flash());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
+app.use('/trainingStaff', staffRouter);
 
 database.testConnection();
 

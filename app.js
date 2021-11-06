@@ -11,8 +11,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/admin');
 var staffRouter = require('./routes/trainingStaff');
+var trainerRouter = require('./routes/trainer');
 var authRouter = require('./routes/auth');
-const { verifyAdmin, verifyStaff } = require('./middlewares/auth');
+const { verifyAdmin, verifyStaff, verifyTrainer } = require('./middlewares/auth');
 
 var app = express();
 
@@ -46,6 +47,7 @@ app.use('/admin',verifyAdmin, adminRouter);
 // app.use('/admin', adminRouter);
 app.use('/trainingStaff',verifyStaff ,staffRouter);
 // app.use('/trainingStaff',staffRouter);
+app.use('/trainer', verifyTrainer, trainerRouter);
 app.use('/auth' ,authRouter);
 
 database.testConnection();
